@@ -34,7 +34,6 @@ def handle(client):
     while True:
         try:
             message = decryptmessage(client.recv(1024), key).decode('utf-8')
-            print(message)
             broadcast(message, key)
         except:
             index = clients.index(client)
